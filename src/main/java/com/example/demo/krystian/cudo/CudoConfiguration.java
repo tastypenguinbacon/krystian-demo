@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 import java.util.Random;
 
 @Configuration
-@Component
 public class CudoConfiguration {
     private int prototypeCount;
     private int singletonCount;

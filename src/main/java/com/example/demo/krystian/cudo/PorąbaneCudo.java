@@ -25,5 +25,21 @@ public class PorąbaneCudo implements Cudo {
             System.out.print(c + "\t");
             c.doCudo();
         }
+
+        for (int i = 0; i < 3; i++) {
+            System.out.println("\tPotrącony jestem");
+            System.out.print("\t");
+            Cudo c = cudoConfiguration.kolejnePrototypoweCudoBezStanu();
+            System.out.print(c + "\t");
+            c.doCudo();
+        }
+
+        for (int i = 0; i < 3; i++) {
+            System.out.println("\tPotrącony jestem");
+            System.out.print("\t");
+            Cudo c = cudoConfiguration.cudoSingletonoweZeStanem();
+            System.out.print(c + "\t");
+            c.doCudo();
+        }
     }
 }

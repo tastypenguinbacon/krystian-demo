@@ -12,6 +12,7 @@ import java.util.Random;
 @Component
 public class CudoConfiguration {
     private int prototypeCount;
+    private int singletonCount;
 
     @Bean
     @Qualifier("LiczboweCudo")
@@ -36,5 +37,17 @@ public class CudoConfiguration {
     public Cudo prototypoweCudo() {
         int forClosure = prototypeCount++;
         return () -> System.out.println("I'm a prototype number: " + forClosure);
+    }
+
+    @Bean
+    @Scope("prototype")
+    public Cudo kolejnePrototypoweCudoBezStanu() {
+        return () -> System.out.println("I'm a stateless prototype");
+    }
+
+    @Bean
+    public Cudo cudoSingletonoweZeStanem() {
+        int forClosure = singletonCount++;
+        return () -> System.out.println("I'm a stateful Singleton lambda! My number is: " + forClosure);
     }
 }
